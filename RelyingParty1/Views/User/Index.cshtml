@@ -1,0 +1,16 @@
+﻿@using System.IdentityModel.Claims
+@{
+    ViewBag.Title = "User Menu";
+}
+
+<h2>User Menu</h2>
+
+<b>Welcome, @User.Identity.Name</b>
+<p>
+    <a href="/user/logout">Logout</a>
+</p>
+<hr/>
+@foreach (var c in (Dictionary<string, string>)ViewBag.Claims) {
+        @: @c.Key = @c.Value <br/>
+    }
+    
